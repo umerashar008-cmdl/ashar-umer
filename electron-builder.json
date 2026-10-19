@@ -1,0 +1,37 @@
+{
+  "appId": "com.dubaipizzashop.pos",
+  "productName": "DUBAI PIZZA SHOP POS",
+  "copyright": "Copyright © 2026 Dubai Pizza Shop",
+  "directories": {
+    "output": "dist-electron"
+  },
+  "files": [
+    "dist/**/*",
+    "electron/**/*",
+    "package.json"
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      },
+      {
+        "target": "portable",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "public/icon.ico",
+    "artifactName": "DubaiPizzaShopPOS_Setup.${ext}"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "DUBAI PIZZA SHOP POS",
+    "installerIcon": "public/icon.ico",
+    "uninstallerIcon": "public/icon.ico",
+    "deleteAppDataOnUninstall": false
+  }
+}

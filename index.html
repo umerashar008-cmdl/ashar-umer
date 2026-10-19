@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function() {
+        try {
+          var _origFetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() { return _origFetch; },
+            set: function(fn) { _origFetch = fn; },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {}
+
+        window.addEventListener('error', function(e) {
+          if ((e.filename && e.filename.indexOf('chrome-extension://') !== -1) ||
+              (e.message && e.message.indexOf('fetch') !== -1)) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+        }, true);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>DUBAI PIZZA SHOP POS</title>
+    <meta name="description" content="Production-ready Windows desktop restaurant Point of Sale (POS) system for Dubai Pizza Shop with offline billing, 26 deals, KOT printing, thermal receipts, table management, Udhaar credit tracking, and inventory." />
+    <meta property="og:title" content="DUBAI PIZZA SHOP POS" />
+    <meta property="og:description" content="Production-ready Windows desktop restaurant Point of Sale (POS) system for Dubai Pizza Shop with offline billing, 26 deals, KOT printing, thermal receipts, table management, Udhaar credit tracking, and inventory." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#121214" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/jpeg" href="/src/assets/images/restaurant_shop_logo_1792361522159.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#0f0f11] text-[#f4f4f5] antialiased selection:bg-[#d97706]/30 selection:text-[#fbbf24] overflow-hidden select-none">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

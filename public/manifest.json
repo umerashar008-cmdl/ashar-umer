@@ -1,0 +1,17 @@
+{
+  "name": "DUBAI PIZZA SHOP POS",
+  "short_name": "Dubai Pizza POS",
+  "description": "Offline Windows Desktop Restaurant Point of Sale Application for Dubai Pizza Shop",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f11",
+  "theme_color": "#d97706",
+  "icons": [
+    {
+      "src": "/src/assets/images/restaurant_shop_logo_1792361522159.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
